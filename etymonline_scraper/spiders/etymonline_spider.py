@@ -1,4 +1,4 @@
-from scrapy.selector import HtmlXPathSelector
+from scrapy import Selector
 from scrapy.contrib.linkextractors.sgml import SgmlLinkExtractor
 from scrapy.contrib.spiders import CrawlSpider, Rule
 
@@ -13,7 +13,7 @@ class EtymonlineSpider(CrawlSpider):
     rules = [Rule(SgmlLinkExtractor(allow=()), "parse_entry", follow=True)]
 
     def parse_entry(self, response):
-        sel = HtmlXPathSelector(response)
+        sel = Selector(response)
 
         all_dt = sel.xpath('//dt')
 
