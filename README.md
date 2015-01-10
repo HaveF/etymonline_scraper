@@ -5,4 +5,6 @@ It works! I have plans for building an HMM capable of recognizing language of or
 
 After you have scrapy installed you can run it with the following command while in the project directory. This will create a large JSON file of word and origins pairs.
 
-    scrapy crawl etymonline.com -o etymonline_data.json -t json -s LOG_FILE=etymonline_data.log
+    scrapy crawl etymonline.com -o etymonline_data.json -t json -s LOG_FILE=etymonline_data.log -L WARNING
+	
+`-L` used to set [Log levels](http://doc.scrapy.org/en/latest/topics/logging.html).
